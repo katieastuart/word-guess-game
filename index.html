@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Harry Potter Hangman</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+    <div id="game">
+        <div class="container">
+            <div class="hero">
+                <div class="row">
+                    <img class="logo-img" src="./assets/images/harry-potter-logo.png" alt="Harry Potter">
+                </div>
+                
+                <div class="row">
+                    <h1>HANGMAN</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 image">
+                    <img class="castle-img" src="./assets/images/Hogwarts-castle-harry-potter-166431.jpg" alt="Hogwarts">  
+                </div>
+
+                <div class="col-sm-6 text">
+                    <p>Press any key to get started.</p>
+
+                    <p id="wins">Wins: 0</p>
+
+                    <p id="current-word">Current word</p>
+
+                    <p id="guesses-left">Guesses remaining: 0</p>
+
+                    <p id="letters-guessed">Letters already guessed:</p>
+                </div>
+            </div>
+        </div>
+
+    </div> 
+      
+    <script src="./assets/javascript/game.js"></script>    
+    
+</body>
+</html>

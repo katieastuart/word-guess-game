@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Reenie+Beanie');
+
+body {
+    background-color: black;
+    color: goldenrod;
+    background-image: url("../images/Wiki-background.jpg");
+}
+
+.logo-img {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
+h1 {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.hero {
+    padding-bottom: 50px;
+}
+
+.text {
+    border-width: 5px;
+    display: block;
+    border-style: solid;
+    border-color: goldenrod;
+    padding: 10px;
+    text-align: center;
+}
+
+.castle-img {
+    width: 100%;
+}
+
+p {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 22px;
+}
