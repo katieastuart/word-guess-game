@@ -12,20 +12,17 @@
  //array to hold guessed letters
  var guessed = []
  
- //randomly selects a character
- function hpPerson() {
+ // randomly selects a character
+ // document.hpPerson = function() {
      computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
          console.log("computer guess: " + computerGuess);
      computerGuessLower = computerGuess.toLowerCase();
          console.log(computerGuessLower);
- };
-
- //run function to randomly select character for initial run through game
- hpPerson();
+ // }();
  
- //create variable that replaces letters in the computer word with underscores
- function currentWordSpaces() {
-     currentWord = "";
+ //next figure out how to display underscores for correct length of word
+ // currentWordSpaces = function() {
+     // currentWord = "";
      for(var i = 0; i < computerGuess.length; i++) {
          if (computerGuess[i] === " ") {
              currentWord = currentWord + " ";
@@ -35,28 +32,21 @@
 
      document.getElementById('current-word').innerHTML = "Current word: " + currentWord;
 
- };
-
- //run currentWordSpaces function for intial run through game
- currentWordSpaces();
+ // }();
  
  //function to reset guesses remaining
-  function guessesReset() {
+ // guessesReset = function() {
      guessesLeft = 6;
      document.getElementById('guesses-left').innerHTML = "Guesses remaining: " + guessesLeft;
- };
+ // }();
 
- //run function to set guesses left for initial run through game
- guessesReset();
-
- //funtion that compiles all of the reset functions to run at once. adds code to reset the guessed array. don't run here, only use further down.
-  function reset() {
-     guessed = [];
-     document.getElementById('letters-guessed').innerHTML = "Letters already guessed: " + guessed;
-     hpPerson();
-     currentWordSpaces();
-     guessesReset();
- };
+ // reset = function() {
+ //     guessed = [];
+ //     document.getElementById('letters-guessed').innerHTML = "Letters already guessed: " + guessed;
+ //     hpPerson();
+ //     currentWordSpaces();
+ //     guessesReset();
+ // }
 
  // function runs when user presses a key
  document.onkeyup = function(event) {
@@ -106,8 +96,29 @@
                      wins +=1;
                      document.getElementById('wins').innerHTML = "Wins: " + wins;
 
-                    //reset the game
-                     reset();
+                     //clear out guessed array and update on html
+                     guessed = [];
+                     document.getElementById('letters-guessed').innerHTML = "Letters already guessed: " + guessed;
+                     
+                     //pick a new character
+                     computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+                     computerGuessLower = computerGuess.toLowerCase();
+                     console.log(computerGuessLower);
+
+                     //update the length of the word
+                     currentWord = "";
+                     for(var i = 0; i < computerGuess.length; i++) {
+                         if (computerGuess[i] === " ") {
+                             currentWord = currentWord + " ";
+                         } else currentWord = currentWord + "_";
+                     }
+                         console.log(currentWord);
+
+                         document.getElementById('current-word').innerHTML = "Current word: " + currentWord;
+                     
+                     //reset the guesses
+                     guessesLeft = 6;
+                     document.getElementById('guesses-left').innerHTML = "Guesses remaining: " + guessesLeft;
                  }
          }
      } 
@@ -124,8 +135,29 @@
          } 
          //if there are no more guesses left it alerts that the game is over and resets the game
          else {alert("GAME OVER. The correct guess was " + computerGuess + ".");
-            // reset the game
-             reset();
+             //clear out guessed array and update on html
+             guessed = [];
+             document.getElementById('letters-guessed').innerHTML = "Letters already guessed: " + guessed;
+             
+             //pick a new character
+             computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+             computerGuessLower = computerGuess.toLowerCase();
+             console.log(computerGuessLower);
+
+             //update the length of the word
+             currentWord = "";
+             for(var i = 0; i < computerGuess.length; i++) {
+                 if (computerGuess[i] === " ") {
+                     currentWord = currentWord + " ";
+                 } else currentWord = currentWord + "_";
+             }
+                 console.log(currentWord);
+
+                 document.getElementById('current-word').innerHTML = "Current word: " + currentWord;
+             
+             //reset the guesses
+             guessesLeft = 6;
+             document.getElementById('guesses-left').innerHTML = "Guesses remaining: " + guessesLeft;
              
          }
      }
